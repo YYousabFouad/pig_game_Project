@@ -1,3 +1,5 @@
+'use strict';
+
 const diceRollBtn = document.querySelector('.btn--roll');
 const newGameBtn = document.querySelector('.btn--new');
 const holdBtn = document.querySelector('.btn--hold');
@@ -27,4 +29,13 @@ diceRollBtn.addEventListener('click', function () {
     player0.classList.toggle('player--active');
     player1.classList.toggle('player--active');
   }
+});
+
+newGameBtn.addEventListener('click', function () {
+  currentScore = 0;
+  activePlayer = 0;
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  document.getElementById(`score--${activePlayer}`).textContent = 0;
+  player0.classList.add('player--active');
+  player1.classList.remove('player--active');
 });
